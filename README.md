@@ -7,6 +7,8 @@ View -> Test Explorer to see all of the unit tests. Try running them and see how
 That is because the implementation of the code is incorrect and needs
 fixing.
 
+**All of the changes you are required to do are in the InterviewTest project in the services. DO NOT change any of the unit tests!**
+
 There are two services which you need to work on. One
 is called *MixedService* which is a collection of methods that you need to correct.
 The summary of them should describe what they are supposed to do exactly (and not to do).
