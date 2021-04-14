@@ -15,7 +15,7 @@ The summary of them should describe what they are supposed to do exactly (and no
 When making changes you can test the correctness by running the unit tests again.
 You can also right click a specific test to run in debug mode.
 
-The other service you have to work on is *FizzBuzzService*. It comes by an accompanying
+The other service you have to work on is *FizzBuzzService*. It comes with an accompanying
 console application just to test the output of your PrintForNumber method.
 
 FizzBuzz is actually a children's game to teach them about division in Mathematics.
