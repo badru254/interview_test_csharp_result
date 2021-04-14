@@ -31,6 +31,35 @@ namespace InterviewTest.xUnit
             Assert.Equal("Hello World", actual);
         }
 
+        [Fact]
+        public void MixedService_GetAlphabeticalArray_Test1()
+        {
+            string[] input = new string[] { "Romeo", "Alpha", "Omega", "John" };
+            string[] sortedOutput = _mixedService.GetAlphabeticalArray(input);
+
+            Assert.Collection(sortedOutput,
+                item => Assert.Equal("Alpha", item),
+                item => Assert.Equal("John", item),
+                item => Assert.Equal("Omega", item),
+                item => Assert.Equal("Romeo", item)
+            );
+        }
+
+        [Fact]
+        public void MixedService_GetAlphabeticalArray_Test2()
+        {
+            string[] input = new string[] { "private", "Apple", "Orange", "Banana", "10 people" };
+            string[] sortedOutput = _mixedService.GetAlphabeticalArray(input);
+
+            Assert.Collection(sortedOutput,
+                item => Assert.Equal("10 people", item),
+                item => Assert.Equal("Apple", item),
+                item => Assert.Equal("Banana", item),
+                item => Assert.Equal("Orange", item),
+                item => Assert.Equal("private", item)
+            );
+        }
+
         [Theory]
         [MemberData(nameof(GetFizzBuzzTestData))]
         public void FizzBuzzService_CorrectOutput(int number, string expected)
