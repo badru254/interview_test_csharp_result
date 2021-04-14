@@ -1,3 +1,4 @@
+using InterviewTest.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -6,13 +7,41 @@ namespace InterviewTest.xUnit
 {
     public class InterviewUnitTests
     {
-        MixedService _mixedService;
-        FizzBuzzService _fizzBuzzService;
+        private readonly MixedService _mixedService;
+        private readonly FizzBuzzService _fizzBuzzService;
+        private readonly Person[] _people;
 
         public InterviewUnitTests()
         {
             _mixedService = new MixedService();
             _fizzBuzzService = new FizzBuzzService();
+            _people = new Person[]
+            {
+                new Person
+                {
+                    Name = "Javier",
+                    Age = 37,
+                    PhoneNumber = "(123)-456-7890"
+                },
+                new Person
+                {
+                    Name = "Peter",
+                    Age = 22,
+                    PhoneNumber = "(302)169-4921"
+                },
+                new Person
+                {
+                    Name = "Jacob",
+                    Age = 65,
+                    PhoneNumber = "(416)593-8273"
+                },
+                new Person
+                {
+                    Name = "Peter",
+                    Age = 58,
+                    PhoneNumber = "(650)321-3212"
+                }
+            };
         }
 
         [Fact]
@@ -58,6 +87,38 @@ namespace InterviewTest.xUnit
                 item => Assert.Equal("Orange", item),
                 item => Assert.Equal("private", item)
             );
+        }
+
+        [Fact]
+        public void MixedService_FindPersonByName_FoundOne_ReturnsFound()
+        {
+            Person person = _mixedService.FindPersonByName("Javier", _people);
+
+            Assert.Same(person, _people[0]);
+        }
+
+        [Fact]
+        public void MixedService_FindPersonByName_NonExisting_ReturnNull()
+        {
+            Person person = _mixedService.FindPersonByName("Guillermo", _people);
+
+            Assert.Null(person);
+        }
+
+        [Fact]
+        public void MixedService_FindPersonByName_CaseDifferent_ReturnsMatch()
+        {
+            Person person = _mixedService.FindPersonByName("jacob", _people);
+
+            Assert.Same(person, _people[2]);
+        }
+
+        [Fact]
+        public void MixedService_FindPersonByName_FoundMultiple_ReturnNull()
+        {
+            Person person = _mixedService.FindPersonByName("Peter", _people);
+
+            Assert.Null(person);
         }
 
         [Theory]

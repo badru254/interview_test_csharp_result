@@ -1,5 +1,4 @@
-﻿
-using System.Linq;
+﻿using InterviewTest.Models;
 
 namespace InterviewTest
 {
@@ -27,6 +26,17 @@ namespace InterviewTest
             }
 
             return results;
+        }
+
+        /// <summary>
+        /// Searches a list of people and returns one matching the name
+        /// If more than one are found then it must return null
+        /// If no one is found then return null
+        /// The name match must be case-insensitive
+        /// </summary>
+        public Person FindPersonByName(string name, Person[] people)
+        {
+            return null;
         }
     }
 }
