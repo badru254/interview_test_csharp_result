@@ -3,7 +3,7 @@
 ## Instructions
 
 Clone this repository and open the solution in Visual Studio. Go to
-View -> Text Explorer to see all of the unit tests. Try running them and see how most of them are failing.
+View -> Test Explorer to see all of the unit tests. Try running them and see how most of them are failing.
 That is because the implementation of the code is incorrect and needs
 fixing.
 
