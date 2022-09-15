@@ -14,6 +14,23 @@ namespace InterviewTest
         /// </summary>
         public string PrintForNumber(int number)
         {
+            //3. If the number is a multiple of both 3 and 5 then it should output FizzBuzz
+            if (number % 3 == 0 && number % 5 == 0)
+            {
+                return "FizzBuzz";
+            }
+            //2. If the number is a multiple of 5 then it should output Buzz
+            else if (number % 5 == 0)
+            {
+                return "Buzz";
+
+            }
+            //1.If the number if a multiple of 3 then it should output Fizz
+            else if (number % 3 == 0) {
+
+                return "Fizz";
+            }
+            //It should output the number itself except for the above cases
             return number.ToString();
         }
 
